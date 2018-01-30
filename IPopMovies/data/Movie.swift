@@ -23,7 +23,19 @@ class Movie{
     var video: Bool
     var voteAverage: Double
     
-    init(data: Data) {
-   //    try JSONDecoder().decode(self, from: data)
+    init(data: Movie) {
+        posterPath = data.posterPath
+        adult = data.adult
+        overview = data.overview
+        releaseDate = data.releaseDate
+        id = data.id
+        originalTitle = data.originalTitle
+        originalLanguage = data.originalLanguage
+        title = data.title
+        backdropPath = data.backdropPath
+        popularity = data.popularity
+        voteCount = data.voteCount
+        video = data.video
+        voteAverage = data.voteAverage
     }
 }

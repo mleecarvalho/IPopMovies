@@ -8,18 +8,16 @@
 
 import UIKit
 
-class DashboardViewController: UICollectionViewController {
+class DashboardViewController: UICollectionViewController, DashboardViewContract {
 
     @IBOutlet weak var collectionViewCell: UICollectionViewCell!
+    private var presenter: DashboardPresenterContract
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let itemSize = UIScreen.main.bounds.width / 2 - 10
-        let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsetsMake(20, 0, 10, 0)
-        layout.itemSize = CGSize(width: itemSize, height: itemSize)
-        layout.minimumInteritemSpacing = 10
-        layout.minimumLineSpacing = 10
+        collectionCellSetup()
+        self.presenter = DashboardPresenter(view: self);
+        self.presenter.loadData(orderBy: MovieOrderBy.POPULARITY)
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +37,30 @@ class DashboardViewController: UICollectionViewController {
         return cell
     }
  
+    private func collectionCellSetup(){
+        let itemSize = UIScreen.main.bounds.width / 2 - 10
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsetsMake(20, 0, 10, 0)
+        layout.itemSize = CGSize(width: itemSize, height: itemSize)
+        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 10
+    }
     
+    func fillList(movies: [Movie]) {
+        self.presenter.updateList(movies: movies)
+    }
+    
+    func showLoading() {
+        
+    }
+    
+    func openItem(movie: Movie) {
+        
+    }
+    
+    func requestPicture(posterPath: String, movieImage: UIImageView) {
+        self.presenter.getPicture(posterPath: posterPath, movieImage: movieImage)
+    }
     
 
 }
