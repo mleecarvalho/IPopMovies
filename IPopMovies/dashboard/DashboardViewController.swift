@@ -16,7 +16,6 @@ class DashboardViewController: UICollectionViewController, DashboardViewContract
     
     override func viewDidLoad() {
         super.viewDidLoad()
- //       collectionCellSetup()
         self.presenter = DashboardPresenter(view: self)
         self.presenter.loadData(orderBy: MovieOrderBy.POPULARITY)
     }
@@ -42,21 +41,11 @@ class DashboardViewController: UICollectionViewController, DashboardViewContract
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieCell", for: indexPath) as! DashboardCollectionViewCell
         let movie: Movie = self.presenter.getMovie(index: indexPath.row)
         cell.titleMovie.text = movie.title
-  //      presenter.getPicture(posterPath: movie.posterPath, movieImage: cell.imageMovie)
+        presenter.getPicture(posterPath: movie.posterPath, movieImage: cell.imageMovie)
         
         return cell
     }
  
-    private func collectionCellSetup(){
-        let itemSize = UIScreen.main.bounds.width / 2
-        let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsetsMake(5, 0, 5, 0)
-        layout.itemSize = CGSize(width: itemSize, height: itemSize)
-        layout.minimumInteritemSpacing = 5
-        layout.minimumLineSpacing = 5
-    }
-    
-
     func showLoading() {
         self.waitingLoadView.startAnimating()
     }

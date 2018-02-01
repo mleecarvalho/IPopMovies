@@ -22,7 +22,8 @@ class ApiConnection{
     }
     
     func getMovieImage(imageView: UIImageView, imagePath: String) {
-        getDataFromUrl(url: buildRequestUrl(url: picassoEndpoint, path: imagePath)) { data, response, error in
+        let components = URLComponents(string: picassoEndpoint+imagePath)
+        getDataFromUrl(url: (components?.url)!) { data, response, error in
             guard let data = data, error == nil else { return }
             DispatchQueue.main.async() {
                 imageView.image = UIImage(data: data)
