@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IPopMovies/dashboard/DashboardViewController.swift"
-            timestampString = "539200087.265631"
+            timestampString = "539203951.659585"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IPopMovies/data/network/ApiConnection.swift"
-            timestampString = "539200087.267247"
+            timestampString = "539203951.660848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "getResponseFromHttpUrl(url:listener:)"
             landmarkType = "7">
             <Locations>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IPopMovies/data/network/ApiConnection.swift"
-            timestampString = "539200087.268188"
+            timestampString = "539203951.6626509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "getResponseFromHttpUrl(url:listener:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IPopMovies/data/network/ApiConnection.swift"
-            timestampString = "539200087.269055"
+            timestampString = "539203951.664139"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "getResponseFromHttpUrl(url:listener:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IPopMovies/data/network/ApiConnection.swift"
-            timestampString = "539200087.269778"
+            timestampString = "539203951.665803"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "processResponse(results:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IPopMovies/data/network/ApiConnection.swift"
-            timestampString = "539200087.270533"
+            timestampString = "539203951.667479"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "getResponseFromHttpUrl(url:listener:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IPopMovies/dashboard/DashboardViewController.swift"
-            timestampString = "539200087.271673"
+            timestampString = "539203951.669047"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -166,15 +166,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IPopMovies/data/network/ApiConnection.swift"
-            timestampString = "539200087.276854"
+            timestampString = "539203951.670194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "getMovieImage(imageView:imagePath:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IPopMovies/data/network/ApiConnection.swift"
-            timestampString = "539200087.2778161"
+            timestampString = "539203951.671751"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "getDataFromUrl(url:completion:)"
             landmarkType = "7">
             <Locations>
@@ -202,11 +202,11 @@
                   moduleName = "IPopMovies"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcio/Documents/iOsProjects/IPopMovies/IPopMovies/data/network/ApiConnection.swift"
-                  timestampString = "539200087.449564"
+                  timestampString = "539203970.502404"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
                   offsetFromSymbolStart = "27">
                </Location>
                <Location
@@ -217,11 +217,11 @@
                   moduleName = "IPopMovies"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/marcio/Documents/iOsProjects/IPopMovies/IPopMovies/data/network/ApiConnection.swift"
-                  timestampString = "539200087.4591269"
+                  timestampString = "539203970.504696"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
                   offsetFromSymbolStart = "45">
                </Location>
             </Locations>
@@ -230,78 +230,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IPopMovies/data/network/ApiConnection.swift"
-            timestampString = "539200087.278756"
+            timestampString = "539203951.67313"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "getMovieImage(imageView:imagePath:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "IPopMovies.ApiConnection.getMovieImage(imageView: __ObjC.UIImageView, imagePath: Swift.String) -&gt; ()"
-                  moduleName = "IPopMovies"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marcio/Documents/iOsProjects/IPopMovies/IPopMovies/data/network/ApiConnection.swift"
-                  timestampString = "539200087.489992"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "190">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "IPopMovies.ApiConnection.getMovieImage(imageView: __ObjC.UIImageView, imagePath: Swift.String) -&gt; ()"
-                  moduleName = "IPopMovies"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marcio/Documents/iOsProjects/IPopMovies/IPopMovies/data/network/ApiConnection.swift"
-                  timestampString = "539200087.4955879"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "548">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in IPopMovies.ApiConnection.getMovieImage(imageView: __ObjC.UIImageView, imagePath: Swift.String) -&gt; ()"
-                  moduleName = "IPopMovies"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marcio/Documents/iOsProjects/IPopMovies/IPopMovies/data/network/ApiConnection.swift"
-                  timestampString = "539200087.498839"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "37">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "IPopMovies/data/network/ApiConnection.swift"
-            timestampString = "539200087.279583"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "getMovieImage(imageView:imagePath:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -313,11 +250,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IPopMovies/data/network/ApiConnection.swift"
-            timestampString = "539200087.280092"
+            timestampString = "539203951.674518"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "getMovieImage(imageView:imagePath:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IPopMovies/data/network/ApiConnection.swift"
+            timestampString = "539203951.675861"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "getMovieImage(imageView:imagePath:)"
             landmarkType = "7">
             <Locations>
@@ -357,16 +310,80 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IPopMovies/dashboard/DashboardViewController.swift"
-            timestampString = "539200087.280549"
+            timestampString = "539203951.677371"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
             endingLineNumber = "42"
             landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IPopMovies/data/network/ApiConnection.swift"
+            timestampString = "539203951.678297"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "getMovieImage(imageView:imagePath:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IPopMovies.ApiConnection.getMovieImage(imageView: __ObjC.UIImageView, imagePath: Swift.String) -&gt; ()"
+                  moduleName = "IPopMovies"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcio/Documents/iOsProjects/IPopMovies/IPopMovies/data/network/ApiConnection.swift"
+                  timestampString = "539202116.825919"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "563">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in IPopMovies.ApiConnection.getMovieImage(imageView: __ObjC.UIImageView, imagePath: Swift.String) -&gt; ()"
+                  moduleName = "IPopMovies"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcio/Documents/iOsProjects/IPopMovies/IPopMovies/data/network/ApiConnection.swift"
+                  timestampString = "539202116.829774"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IPopMovies/data/network/ApiConnection.swift"
+            timestampString = "539203951.679814"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "getMovieImage(imageView:imagePath:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

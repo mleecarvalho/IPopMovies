@@ -22,6 +22,19 @@ class ApiConnection{
     }
     
     func getMovieImage(imageView: UIImageView, imagePath: String) {
+        let imgURL  = URL(string: picassoEndpoint+imagePath)!
+        let session = URLSession(configuration: .default)
+        
+        session.dataTask(with: imgURL) { (data, response, error) -> Void in
+            if let e = error {
+                print("Error downloading movie picture: \(e)")
+            } else { 
+                imageView.image = UIImage(data: data!)
+            }
+
+        }.resume()
+        
+     /*
         let components = URLComponents(string: picassoEndpoint+imagePath)
         getDataFromUrl(url: (components?.url)!) { data, response, error in
             guard let data = data, error == nil else { return }
@@ -29,6 +42,8 @@ class ApiConnection{
                 imageView.image = UIImage(data: data)
             }
         }
+ 
+ */
     }
     
     private func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
