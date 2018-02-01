@@ -54,8 +54,11 @@ class DashboardViewController: UICollectionViewController, DashboardViewContract
     }
     
     func updateCollectionView(){
-        self.collectionView?.reloadData()
-        self.waitingLoadView.stopAnimating()
+        DispatchQueue.main.async {
+            self.collectionView?.reloadData()
+            self.waitingLoadView.stopAnimating()
+            
+        }
     }
     
     func openItem(movie: Movie) {
