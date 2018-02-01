@@ -33,17 +33,6 @@ class ApiConnection{
             }
 
         }.resume()
-        
-     /*
-        let components = URLComponents(string: picassoEndpoint+imagePath)
-        getDataFromUrl(url: (components?.url)!) { data, response, error in
-            guard let data = data, error == nil else { return }
-            DispatchQueue.main.async() {
-                imageView.image = UIImage(data: data)
-            }
-        }
- 
- */
     }
     
     private func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
@@ -75,7 +64,10 @@ class ApiConnection{
         operationsQueue.addOperation({
             print("Operation 1 - start")
             let task = URLSession.shared.dataTask(with: url) { (data, request, error) in
-                if error == nil {
+                if let e = error {
+                    print("Error return data from server : \(e)")
+
+                }else {
                     if let returnData = data {
                         do{
 
@@ -86,11 +78,10 @@ class ApiConnection{
                                 listener.updateMovies(movies: self.processResponse(results: arrayReturn))
                             }
                         }catch{
-                            print("Erro ao formatar o retorno.")
+                            print("Error to format data")
                         }
                     }
-                }else{
-                    print("Erro ao fazer a consulta do preço: "+error.debugDescription)
+                    
                 }
                 // Signal that we are done
                 sema.signal()
@@ -118,7 +109,5 @@ class ApiConnection{
         }
         return movies
     }
-
-
 
 }
