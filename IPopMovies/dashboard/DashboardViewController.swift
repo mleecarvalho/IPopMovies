@@ -10,13 +10,14 @@ import UIKit
 
 class DashboardViewController: UICollectionViewController, DashboardViewContract {
 
-    @IBOutlet weak var collectionViewCell: UICollectionViewCell!
-    private var presenter: DashboardPresenterContract
+    
+    @IBOutlet weak var waitingLoadView: UIActivityIndicatorView!
+    private var presenter: DashboardPresenterContract!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionCellSetup()
-        self.presenter = DashboardPresenter(view: self);
+        self.presenter = DashboardPresenter(view: self)
         self.presenter.loadData(orderBy: MovieOrderBy.POPULARITY)
     }
 
@@ -26,13 +27,14 @@ class DashboardViewController: UICollectionViewController, DashboardViewContract
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return presenter.getListMovieCount()
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieCell", for: indexPath) as! DashboardCollectionViewCell
+        let movie: Movie = self.presenter.getMovie(index: indexPath.row)
    //     cell.imageMovie.image = UIImage(cgImage: "")
-        cell.titleMovie.text = ""
+        cell.titleMovie.text = movie.title
         
         return cell
     }
@@ -46,12 +48,14 @@ class DashboardViewController: UICollectionViewController, DashboardViewContract
         layout.minimumLineSpacing = 10
     }
     
-    func fillList(movies: [Movie]) {
-        self.presenter.updateList(movies: movies)
+
+    func showLoading() {
+        self.waitingLoadView.startAnimating()
     }
     
-    func showLoading() {
-        
+    func updateCollectionView(){
+        self.collectionView?.reloadData()
+        self.waitingLoadView.stopAnimating()
     }
     
     func openItem(movie: Movie) {
@@ -62,6 +66,5 @@ class DashboardViewController: UICollectionViewController, DashboardViewContract
         self.presenter.getPicture(posterPath: posterPath, movieImage: movieImage)
     }
     
-
 }
 

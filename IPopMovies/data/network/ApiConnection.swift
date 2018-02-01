@@ -17,8 +17,9 @@ class ApiConnection{
     private let popularityPath: String = "3/movie/popular"
     private let topRatedPath: String = "3/movie/top_rated"
     
-    func requestMovies(type: MovieOrderBy) -> [Movie] {
-        return getResponseFromHttpUrl(url: buildRequestUrl(path: getRequestPath(type: type)))
+    func requestMovies(type: MovieOrderBy, listener: ResponseListener) {
+        getResponseFromHttpUrl(url: self.buildRequestUrl(path: self.getRequestPath(type: type)),
+                                           listener: listener)
     }
     
     func getMovieImage(imageView: UIImageView, imagePath: String) {
@@ -47,46 +48,69 @@ class ApiConnection{
         switch(type) {
             case MovieOrderBy.POPULARITY: return popularityPath
             case MovieOrderBy.RATING: return topRatedPath
-            default: return popularityPath
         }
     }
     
     private func buildRequestUrl(path: String) -> URL {
-        var components = URLComponents(string: path)!
+        var components = URLComponents(string: movieDBEndpoint+path)!
         components.queryItems = [URLQueryItem(name:"api_key", value:apiDBKey)]
         return components.url!
     }
     
-    private func requestMoviesList(movieUrl: URL) -> [Movie] {
-            return  getResponseFromHttpUrl(url: movieUrl)
-    }
-    
-    
-    private func getResponseFromHttpUrl(url: URL) -> [Movie] {
-        var results = [Movie]()
-        let request = URLRequest(url: url)
+    private func getResponseFromHttpUrl(url: URL, listener: ResponseListener) {
+      
+        let operationsQueue = OperationQueue()
         
-        let task = URLSession.shared.dataTask(with: request) { (data, request, error) in
-            if error == nil {
-                if let returnData = data {
-                    do{
-                        if let jsonObject = try JSONSerialization.jsonObject(with: returnData, options: []) as? [String: Any] {
-                            print("Request List", jsonObject)
-                            results = jsonObject["results"] as! [Movie]
+        // semaphore with count equal to zero is useful for synchronizing completion of work, in our case the renewal of auth token
+        let sema = DispatchSemaphore.init(value: 1);
+        // Operation 1
+        operationsQueue.addOperation({
+            print("Operation 1 - start")
+            let task = URLSession.shared.dataTask(with: url) { (data, request, error) in
+                if error == nil {
+                    if let returnData = data {
+                        do{
+
+                            if let jsonObject = try JSONSerialization.jsonObject(with: returnData, options: JSONSerialization.ReadingOptions(rawValue: 0)) as? [String:AnyObject] {
+                                print("Request List", jsonObject)
+                                let arrayReturn: Array<[String: Any]> = jsonObject["results"] as! Array<[String: Any]>
+
+                                listener.updateMovies(movies: self.processResponse(results: arrayReturn))
+                            }
+                        }catch{
+                            print("Erro ao formatar o retorno.")
                         }
-                    }catch{
-                        print("Erro ao formatar o retorno.")
                     }
+                }else{
+                    print("Erro ao fazer a consulta do preço: "+error.debugDescription)
                 }
-            }else{
-                print("Erro ao fazer a consulta do preço.")
+                // Signal that we are done
+                sema.signal()
             }
-        }
-        task.resume()
+            task.resume()
+
+            // Now we wait until the response block will send send a signal
+            sema.wait()
+
+            print("Operation 1 - end")
+        })
         
-        return results
  
     }
+    
+    private func processResponse(results: Array<[String: Any]> ) -> [Movie]{
+        var movies: [Movie] = []
+        if  results.count > 0 {
+
+            for row in results {
+                movies.append(Movie(data: row))
+            }
+  
+        
+        }
+        return movies
+    }
+
 
 
 }

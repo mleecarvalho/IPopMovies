@@ -19,6 +19,7 @@
 		D5C82F072020E5CE0073B770 /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C82F062020E5CE0073B770 /* DashboardPresenter.swift */; };
 		D5C82F092020E6C70073B770 /* DashboardContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C82F082020E6C70073B770 /* DashboardContract.swift */; };
 		D5C82F0C2020F3DD0073B770 /* SearchUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C82F0B2020F3DD0073B770 /* SearchUtils.swift */; };
+		D5C82F0E202229220073B770 /* ResponseListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C82F0D202229220073B770 /* ResponseListener.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		D5C82F062020E5CE0073B770 /* DashboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
 		D5C82F082020E6C70073B770 /* DashboardContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardContract.swift; sourceTree = "<group>"; };
 		D5C82F0B2020F3DD0073B770 /* SearchUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUtils.swift; sourceTree = "<group>"; };
+		D5C82F0D202229220073B770 /* ResponseListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseListener.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				D5C82F022020BB020073B770 /* ApiConnection.swift */,
+				D5C82F0D202229220073B770 /* ResponseListener.swift */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				D5C82EEC201F945F0073B770 /* DashboardViewController.swift in Sources */,
 				D5C82EFD201F9DDE0073B770 /* DashboardCollectionViewCell.swift in Sources */,
 				D5C82F052020BBAE0073B770 /* MovieOrderBy.swift in Sources */,
+				D5C82F0E202229220073B770 /* ResponseListener.swift in Sources */,
 				D5C82F032020BB020073B770 /* ApiConnection.swift in Sources */,
 				D5C82F072020E5CE0073B770 /* DashboardPresenter.swift in Sources */,
 				D5C82F00201FA05B0073B770 /* Movie.swift in Sources */,

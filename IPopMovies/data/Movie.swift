@@ -23,19 +23,20 @@ class Movie{
     var video: Bool
     var voteAverage: Double
     
-    init(data: Movie) {
-        posterPath = data.posterPath
-        adult = data.adult
-        overview = data.overview
-        releaseDate = data.releaseDate
-        id = data.id
-        originalTitle = data.originalTitle
-        originalLanguage = data.originalLanguage
-        title = data.title
-        backdropPath = data.backdropPath
-        popularity = data.popularity
-        voteCount = data.voteCount
-        video = data.video
-        voteAverage = data.voteAverage
+    init(data: [String: Any]) {
+        posterPath = (data["posterPath"] as? String) ?? ""
+        adult = (data["adult"] as? Bool) ?? false
+        overview = (data["overview"] as? String) ?? ""
+        releaseDate = (data["releaseDate"] as? String) ?? ""
+        id = (data["id"] as? Int) ?? 0
+        originalTitle = (data["originalTitle"] as? String) ?? ""
+        originalLanguage = (data["originalLanguage"] as? String) ?? ""
+        title = (data["title"] as? String) ?? ""
+        backdropPath = (data["backdropPath"] as? String) ?? ""
+        popularity = (data["popularity"] as? Double) ?? 0
+        voteCount = (data["voteCount"] as? Int) ?? 0
+        video = (data["video"] as? Bool) ?? false
+        voteAverage = (data["voteAverage"] as? Double) ?? 0
     }
+    
 }

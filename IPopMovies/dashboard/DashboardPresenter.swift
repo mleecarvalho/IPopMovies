@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-class DashboardPresenter: DashboardPresenterContract {
-    
-    private var movies: [Movie] = [Movie]()
+class DashboardPresenter: DashboardPresenterContract, ResponseListener {
+
+    private var movies: [Movie] = []
     private var view: DashboardViewContract?
     private let apiConnection: ApiConnection = ApiConnection()
     private var orderBy: MovieOrderBy = MovieOrderBy.POPULARITY
@@ -22,22 +22,22 @@ class DashboardPresenter: DashboardPresenterContract {
 
     func loadData(orderBy: MovieOrderBy) {
         if movies.isEmpty{
-          self.movies = apiConnection.requestMovies(type: self.orderBy)
-        } else {
-            if self.view != nil {
-                self.view!.fillList(movies: self.movies)
-                
-            }
+            // Operation 2
+            let requestsOnHoldQueue = OperationQueue() // new Queue
+            requestsOnHoldQueue.addOperation({
+                self.apiConnection.requestMovies(type: self.orderBy, listener: self)
+                print("Operation 2")
+            });
+
         }
     }
     
     func reloadData(orderBy: MovieOrderBy) {
-        self.movies = apiConnection.requestMovies(type: orderBy)
-        self.view!.fillList(movies: self.movies)
+        apiConnection.requestMovies(type: orderBy, listener: self )
     }
     
-    func updateList(movies: [Movie]) {
-        self.movies = movies
+    func getMovie(index: Int) -> Movie{
+        return self.movies[index]
     }
     
     func getListMovie() -> [Movie] {
@@ -57,6 +57,15 @@ class DashboardPresenter: DashboardPresenterContract {
     
     func getPicture(posterPath: String, movieImage: UIImageView) {
         apiConnection.getMovieImage(imageView: movieImage, imagePath: posterPath)
+    }
+    
+    func getListMovieCount() -> Int {
+        return self.movies.count
+    }
+    
+    func updateMovies(movies: [Movie]) {
+        self.movies = movies
+        view?.updateCollectionView()
     }
     
 
