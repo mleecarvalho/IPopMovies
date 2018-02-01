@@ -55,7 +55,6 @@
                                 </view>
                                 <constraints>
                                     <constraint firstItem="JOb-c3-ydj" firstAttribute="leading" secondItem="Jg0-6y-aiR" secondAttribute="leading" id="1RH-gI-Edo"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="KqA-8b-7z0" secondAttribute="bottom" constant="16" id="57q-5v-8Ez"/>
                                     <constraint firstAttribute="trailing" secondItem="JOb-c3-ydj" secondAttribute="trailing" id="ECa-4I-lvT"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="KqA-8b-7z0" secondAttribute="trailing" constant="12" id="Kcz-Wz-8go"/>
                                     <constraint firstAttribute="trailing" secondItem="JOb-c3-ydj" secondAttribute="trailing" id="LFW-61-woc"/>

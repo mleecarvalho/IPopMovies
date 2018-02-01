@@ -35,12 +35,6 @@ class ApiConnection{
         }.resume()
     }
     
-    private func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            completion(data, response, error)
-            }.resume()
-    }
-    
     private func getRequestPath(type: MovieOrderBy) -> String {
         switch(type) {
             case MovieOrderBy.POPULARITY: return popularityPath
@@ -60,7 +54,6 @@ class ApiConnection{
         
         // semaphore with count equal to zero is useful for synchronizing completion of work, in our case the renewal of auth token
         let sema = DispatchSemaphore.init(value: 1);
-        // Operation 1
         operationsQueue.addOperation({
             print("Operation 1 - start")
             let task = URLSession.shared.dataTask(with: url) { (data, request, error) in
@@ -100,12 +93,9 @@ class ApiConnection{
     private func processResponse(results: Array<[String: Any]> ) -> [Movie]{
         var movies: [Movie] = []
         if  results.count > 0 {
-
             for row in results {
                 movies.append(Movie(data: row))
             }
-  
-        
         }
         return movies
     }

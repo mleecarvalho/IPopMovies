@@ -22,11 +22,9 @@ class DashboardPresenter: DashboardPresenterContract, ResponseListener {
 
     func loadData(orderBy: MovieOrderBy) {
         if movies.isEmpty{
-            // Operation 2
             let requestsOnHoldQueue = OperationQueue() // new Queue
             requestsOnHoldQueue.addOperation({
                 self.apiConnection.requestMovies(type: self.orderBy, listener: self)
-                print("Operation 2")
             });
 
         }
