@@ -20,6 +20,7 @@
 		D5C82F092020E6C70073B770 /* DashboardContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C82F082020E6C70073B770 /* DashboardContract.swift */; };
 		D5C82F0C2020F3DD0073B770 /* SearchUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C82F0B2020F3DD0073B770 /* SearchUtils.swift */; };
 		D5C82F0E202229220073B770 /* ResponseListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C82F0D202229220073B770 /* ResponseListener.swift */; };
+		D5DE3D60202382BA00BDEF31 /* CustomCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE3D5F202382BA00BDEF31 /* CustomCollectionViewFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		D5C82F082020E6C70073B770 /* DashboardContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardContract.swift; sourceTree = "<group>"; };
 		D5C82F0B2020F3DD0073B770 /* SearchUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUtils.swift; sourceTree = "<group>"; };
 		D5C82F0D202229220073B770 /* ResponseListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseListener.swift; sourceTree = "<group>"; };
+		D5DE3D5F202382BA00BDEF31 /* CustomCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				D5C82F0B2020F3DD0073B770 /* SearchUtils.swift */,
+				D5DE3D5F202382BA00BDEF31 /* CustomCollectionViewFlowLayout.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				D5C82F052020BBAE0073B770 /* MovieOrderBy.swift in Sources */,
 				D5C82F0E202229220073B770 /* ResponseListener.swift in Sources */,
 				D5C82F032020BB020073B770 /* ApiConnection.swift in Sources */,
+				D5DE3D60202382BA00BDEF31 /* CustomCollectionViewFlowLayout.swift in Sources */,
 				D5C82F072020E5CE0073B770 /* DashboardPresenter.swift in Sources */,
 				D5C82F00201FA05B0073B770 /* Movie.swift in Sources */,
 				D5C82EEA201F945F0073B770 /* AppDelegate.swift in Sources */,

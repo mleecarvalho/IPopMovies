@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -22,8 +23,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tgQ-In-1de">
-                            <size key="itemSize" width="185" height="167"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tgQ-In-1de" customClass="CustomCollectionViewFlowLayout" customModule="IPopMovies" customModuleProvider="target">
+                            <size key="itemSize" width="187" height="188"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -34,19 +35,20 @@
                         </activityIndicatorView>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" semanticContentAttribute="forceLeftToRight" reuseIdentifier="movieCell" id="Jg0-6y-aiR" customClass="DashboardCollectionViewCell" customModule="IPopMovies" customModuleProvider="target">
-                                <rect key="frame" x="95" y="0.0" width="185" height="167"/>
+                                <rect key="frame" x="94" y="0.0" width="187" height="188"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="185" height="167"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="187" height="188"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JOb-c3-ydj">
-                                            <rect key="frame" x="0.0" y="0.0" width="185" height="167"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="187" height="188"/>
+                                            <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqA-8b-7z0">
-                                            <rect key="frame" x="10" y="126" width="155" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqA-8b-7z0">
+                                            <rect key="frame" x="20" y="147" width="44.5" height="21"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -56,6 +58,8 @@
                                     <constraint firstAttribute="trailing" secondItem="JOb-c3-ydj" secondAttribute="trailing" id="LFW-61-woc"/>
                                     <constraint firstItem="JOb-c3-ydj" firstAttribute="top" secondItem="Jg0-6y-aiR" secondAttribute="top" id="O1W-CV-hae"/>
                                     <constraint firstAttribute="bottom" secondItem="JOb-c3-ydj" secondAttribute="bottom" id="TRg-pN-PRN"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="KqA-8b-7z0" secondAttribute="bottom" constant="12" id="fB6-lu-32u"/>
+                                    <constraint firstItem="KqA-8b-7z0" firstAttribute="leading" secondItem="Jg0-6y-aiR" secondAttribute="leadingMargin" constant="12" id="woZ-7c-XZ5"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="imageMovie" destination="JOb-c3-ydj" id="9ht-f2-Jsj"/>

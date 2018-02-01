@@ -18,12 +18,11 @@ class ApiConnection{
     private let topRatedPath: String = "3/movie/top_rated"
     
     func requestMovies(type: MovieOrderBy, listener: ResponseListener) {
-        getResponseFromHttpUrl(url: self.buildRequestUrl(path: self.getRequestPath(type: type)),
-                                           listener: listener)
+        getResponseFromHttpUrl(url: self.buildRequestUrl(url: movieDBEndpoint, path: self.getRequestPath(type: type)), listener: listener)
     }
     
     func getMovieImage(imageView: UIImageView, imagePath: String) {
-        getDataFromUrl(url: buildRequestUrl(path: imagePath)) { data, response, error in
+        getDataFromUrl(url: buildRequestUrl(url: picassoEndpoint, path: imagePath)) { data, response, error in
             guard let data = data, error == nil else { return }
             DispatchQueue.main.async() {
                 imageView.image = UIImage(data: data)
@@ -36,13 +35,6 @@ class ApiConnection{
             completion(data, response, error)
             }.resume()
     }
-    private func getPicassoURLImage(picture: String) -> String {
-        var urlImage = picture
-        if(!urlImage.isEmpty){
-            urlImage.append(picassoEndpoint)
-        }
-        return urlImage
-    }
     
     private func getRequestPath(type: MovieOrderBy) -> String {
         switch(type) {
@@ -51,8 +43,8 @@ class ApiConnection{
         }
     }
     
-    private func buildRequestUrl(path: String) -> URL {
-        var components = URLComponents(string: movieDBEndpoint+path)!
+    private func buildRequestUrl(url: String, path: String) -> URL {
+        var components = URLComponents(string: url+path)!
         components.queryItems = [URLQueryItem(name:"api_key", value:apiDBKey)]
         return components.url!
     }

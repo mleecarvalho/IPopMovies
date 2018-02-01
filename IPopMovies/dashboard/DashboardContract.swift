@@ -13,8 +13,6 @@ protocol DashboardViewContract{
         func showLoading()
         func openItem(movie: Movie)
         func updateCollectionView()
-        func requestPicture(posterPath: String, movieImage: UIImageView)
-
 }
     
 protocol DashboardPresenterContract {

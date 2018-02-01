@@ -16,7 +16,7 @@ class DashboardViewController: UICollectionViewController, DashboardViewContract
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionCellSetup()
+ //       collectionCellSetup()
         self.presenter = DashboardPresenter(view: self)
         self.presenter.loadData(orderBy: MovieOrderBy.POPULARITY)
     }
@@ -26,26 +26,34 @@ class DashboardViewController: UICollectionViewController, DashboardViewContract
         // Dispose of any resources that can be recreated.
     }
 
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.getListMovieCount()
     }
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let padding: CGFloat =  50
+        let collectionViewSize = collectionView.frame.size.width - padding
+        
+        return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieCell", for: indexPath) as! DashboardCollectionViewCell
         let movie: Movie = self.presenter.getMovie(index: indexPath.row)
-   //     cell.imageMovie.image = UIImage(cgImage: "")
         cell.titleMovie.text = movie.title
+  //      presenter.getPicture(posterPath: movie.posterPath, movieImage: cell.imageMovie)
         
         return cell
     }
  
     private func collectionCellSetup(){
-        let itemSize = UIScreen.main.bounds.width / 2 - 10
+        let itemSize = UIScreen.main.bounds.width / 2
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsetsMake(20, 0, 10, 0)
+        layout.sectionInset = UIEdgeInsetsMake(5, 0, 5, 0)
         layout.itemSize = CGSize(width: itemSize, height: itemSize)
-        layout.minimumInteritemSpacing = 10
-        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 5
+        layout.minimumLineSpacing = 5
     }
     
 
@@ -63,10 +71,6 @@ class DashboardViewController: UICollectionViewController, DashboardViewContract
     
     func openItem(movie: Movie) {
         
-    }
-    
-    func requestPicture(posterPath: String, movieImage: UIImageView) {
-        self.presenter.getPicture(posterPath: posterPath, movieImage: movieImage)
     }
     
 }
