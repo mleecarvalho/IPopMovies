@@ -20,6 +20,7 @@
 		D5C82F092020E6C70073B770 /* DashboardContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C82F082020E6C70073B770 /* DashboardContract.swift */; };
 		D5C82F0C2020F3DD0073B770 /* SearchUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C82F0B2020F3DD0073B770 /* SearchUtils.swift */; };
 		D5C82F0E202229220073B770 /* ResponseListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C82F0D202229220073B770 /* ResponseListener.swift */; };
+		D5CFBCBD2024D2B800BB4EC8 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CFBCBC2024D2B800BB4EC8 /* MovieDetailsViewController.swift */; };
 		D5DE3D60202382BA00BDEF31 /* CustomCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE3D5F202382BA00BDEF31 /* CustomCollectionViewFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		D5C82F082020E6C70073B770 /* DashboardContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardContract.swift; sourceTree = "<group>"; };
 		D5C82F0B2020F3DD0073B770 /* SearchUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUtils.swift; sourceTree = "<group>"; };
 		D5C82F0D202229220073B770 /* ResponseListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseListener.swift; sourceTree = "<group>"; };
+		D5CFBCBC2024D2B800BB4EC8 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		D5DE3D5F202382BA00BDEF31 /* CustomCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,13 +74,13 @@
 		D5C82EE8201F945F0073B770 /* IPopMovies */ = {
 			isa = PBXGroup;
 			children = (
+				D5CFBCBB2024D28200BB4EC8 /* movieDetails */,
+				D5CFBCBA2024C9C400BB4EC8 /* storyboards */,
 				D5C82F0A2020F3BB0073B770 /* utils */,
 				D5C82EFE201FA0350073B770 /* data */,
 				D5C82EFB201F9A8C0073B770 /* dashboard */,
 				D5C82EE9201F945F0073B770 /* AppDelegate.swift */,
-				D5C82EED201F945F0073B770 /* Main.storyboard */,
 				D5C82EF0201F945F0073B770 /* Assets.xcassets */,
-				D5C82EF2201F945F0073B770 /* LaunchScreen.storyboard */,
 				D5C82EF5201F945F0073B770 /* Info.plist */,
 			);
 			path = IPopMovies;
@@ -121,6 +123,23 @@
 				D5DE3D5F202382BA00BDEF31 /* CustomCollectionViewFlowLayout.swift */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		D5CFBCBA2024C9C400BB4EC8 /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D5C82EF2201F945F0073B770 /* LaunchScreen.storyboard */,
+				D5C82EED201F945F0073B770 /* Main.storyboard */,
+			);
+			path = storyboards;
+			sourceTree = "<group>";
+		};
+		D5CFBCBB2024D28200BB4EC8 /* movieDetails */ = {
+			isa = PBXGroup;
+			children = (
+				D5CFBCBC2024D2B800BB4EC8 /* MovieDetailsViewController.swift */,
+			);
+			path = movieDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +222,7 @@
 				D5C82F032020BB020073B770 /* ApiConnection.swift in Sources */,
 				D5DE3D60202382BA00BDEF31 /* CustomCollectionViewFlowLayout.swift in Sources */,
 				D5C82F072020E5CE0073B770 /* DashboardPresenter.swift in Sources */,
+				D5CFBCBD2024D2B800BB4EC8 /* MovieDetailsViewController.swift in Sources */,
 				D5C82F00201FA05B0073B770 /* Movie.swift in Sources */,
 				D5C82EEA201F945F0073B770 /* AppDelegate.swift in Sources */,
 				D5C82F0C2020F3DD0073B770 /* SearchUtils.swift in Sources */,

@@ -38,9 +38,15 @@ class DashboardViewController: UICollectionViewController, DashboardViewContract
         
         return cell
     }
- 
-    func showLoading() {
-        self.waitingLoadView.startAnimating()
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "movieDetailSegue" {
+            let cell = sender as! DashboardCollectionViewCell
+            if let indexPath = self.collectionView?.indexPath(for: cell){
+                let viewControllerDestination = segue.destination as! MovieDetailsViewController
+                viewControllerDestination.movie = self.presenter.getMovie(index: indexPath.row)
+            }
+        }
     }
     
     func updateCollectionView(){
@@ -48,10 +54,6 @@ class DashboardViewController: UICollectionViewController, DashboardViewContract
             self.reloadCollectionViewData()
             self.waitingLoadView.stopAnimating()
         }
-    }
-    
-    func openItem(movie: Movie) {
-        
     }
     
     @IBAction func orderByAction(_ sender: Any) {
@@ -88,6 +90,11 @@ class DashboardViewController: UICollectionViewController, DashboardViewContract
             {self.collectionView?.reloadSections(NSIndexSet(index: 0) as IndexSet)}, completion: { (finished:Bool) -> Void in})
         self.collectionView?.reloadData()
     }
+
+    private func showLoading() {
+        self.waitingLoadView.startAnimating()
+    }
     
+
 }
 
