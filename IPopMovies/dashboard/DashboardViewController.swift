@@ -45,6 +45,7 @@ class DashboardViewController: UICollectionViewController, DashboardViewContract
             if let indexPath = self.collectionView?.indexPath(for: cell){
                 let viewControllerDestination = segue.destination as! MovieDetailsViewController
                 viewControllerDestination.movie = self.presenter.getMovie(index: indexPath.row)
+                viewControllerDestination.imgPoster = cell.imageMovie.image
             }
         }
     }
@@ -72,6 +73,9 @@ class DashboardViewController: UICollectionViewController, DashboardViewContract
                                             handler: {(alert: UIAlertAction!) in self.reorderMovies(orderBy: MovieOrderBy.RATING)})
         rateAction.isEnabled = orderBy != MovieOrderBy.RATING
         orderByAction.addAction(rateAction)
+        
+        let cancelAction = UIAlertAction.init(title:"Cancel", style: .cancel, handler: nil)
+        orderByAction.addAction(cancelAction)
         
         present(orderByAction, animated: true, completion: nil)
     }

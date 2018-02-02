@@ -17,16 +17,26 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var descriptionMovie: UILabel!
     
     var movie: Movie!
+    var imgPoster : UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        feedMovieFields()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func feedMovieFields(){
+        self.title = movie.title
+        self.titleMovie.text = movie.originalTitle
+        self.yearMovie.text = movie.releaseDate
+        self.ratingMovie.text = String(movie.voteAverage)
+        self.descriptionMovie.text = movie.overview
+        self.posterMovie.image = self.imgPoster
     }
     
 }
