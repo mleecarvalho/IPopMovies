@@ -35,6 +35,10 @@ class DashboardPresenter: DashboardPresenterContract, ResponseListener {
         apiConnection.requestMovies(type: orderBy, listener: self )
     }
     
+    func clearData() {
+        self.movies = []
+    }
+    
     func getMovie(index: Int) -> Movie{
         return self.movies[index]
     }

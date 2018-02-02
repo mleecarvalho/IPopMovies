@@ -29,13 +29,6 @@ class DashboardViewController: UICollectionViewController, DashboardViewContract
         return presenter.getListMovieCount()
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let padding: CGFloat =  50
-        let collectionViewSize = collectionView.frame.size.width - padding
-        
-        return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
-    }
-    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieCell", for: indexPath) as! DashboardCollectionViewCell
         let movie: Movie = self.presenter.getMovie(index: indexPath.row)
@@ -52,7 +45,7 @@ class DashboardViewController: UICollectionViewController, DashboardViewContract
     
     func updateCollectionView(){
         DispatchQueue.main.async {
-            self.collectionView?.reloadData()
+            self.reloadCollectionViewData()
             self.waitingLoadView.stopAnimating()
         }
     }
@@ -62,14 +55,20 @@ class DashboardViewController: UICollectionViewController, DashboardViewContract
     }
     
     @IBAction func orderByAction(_ sender: Any) {
+        let orderBy = presenter.getOrderBy()
+
         let orderByAction = UIAlertController.init(title: "Order By",
                                                    message: "",
                                                    preferredStyle: .actionSheet)
+        
         let popAction = UIAlertAction.init(title: "Popularity", style: .default,
                                            handler: {(alert: UIAlertAction!) in self.reorderMovies(orderBy: MovieOrderBy.POPULARITY)})
+        popAction.isEnabled = orderBy != MovieOrderBy.POPULARITY
+        orderByAction.addAction(popAction)
+        
         let rateAction = UIAlertAction.init(title: "Rating", style: .default,
                                             handler: {(alert: UIAlertAction!) in self.reorderMovies(orderBy: MovieOrderBy.RATING)})
-        orderByAction.addAction(popAction)
+        rateAction.isEnabled = orderBy != MovieOrderBy.RATING
         orderByAction.addAction(rateAction)
         
         present(orderByAction, animated: true, completion: nil)
@@ -77,10 +76,17 @@ class DashboardViewController: UICollectionViewController, DashboardViewContract
     
     private func reorderMovies(orderBy: MovieOrderBy){
         if(presenter.orderByWasChanged(orderBy: orderBy)){
-  //          self.collectionView?.deleteItems(at: (self.collectionView?.indexPathsForVisibleItems)!)
+            self.presenter.clearData()
+            self.reloadCollectionViewData()
             self.showLoading()
-            presenter.reloadData(orderBy: orderBy)
+            self.presenter.reloadData(orderBy: orderBy)
         }
+    }
+    
+    private func reloadCollectionViewData(){
+        self.collectionView?.performBatchUpdates(
+            {self.collectionView?.reloadSections(NSIndexSet(index: 0) as IndexSet)}, completion: { (finished:Bool) -> Void in})
+        self.collectionView?.reloadData()
     }
     
 }

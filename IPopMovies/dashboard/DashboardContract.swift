@@ -18,6 +18,7 @@ protocol DashboardViewContract{
 protocol DashboardPresenterContract {
         func loadData(orderBy: MovieOrderBy)
         func reloadData(orderBy: MovieOrderBy)
+        func clearData()
         func getListMovie() -> [Movie]
         func getListMovieCount() -> Int
         func getMovie(index: Int) -> Movie
