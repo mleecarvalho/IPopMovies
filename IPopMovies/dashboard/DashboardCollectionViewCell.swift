@@ -12,6 +12,7 @@ class DashboardCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageMovie: UIImageView!
     @IBOutlet weak var titleMovie: UILabel!
+    @IBOutlet weak var waitLoadingImage: UIActivityIndicatorView!
     
     
 }

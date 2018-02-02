@@ -41,7 +41,8 @@ class DashboardViewController: UICollectionViewController, DashboardViewContract
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieCell", for: indexPath) as! DashboardCollectionViewCell
         let movie: Movie = self.presenter.getMovie(index: indexPath.row)
         cell.titleMovie.text = movie.title
-        presenter.getPicture(posterPath: movie.posterPath, movieImage: cell.imageMovie)
+        cell.waitLoadingImage.startAnimating()
+        presenter.getPicture(posterPath: movie.posterPath, movieImage: cell.imageMovie, waitloadingView: cell.waitLoadingImage)
         
         return cell
     }

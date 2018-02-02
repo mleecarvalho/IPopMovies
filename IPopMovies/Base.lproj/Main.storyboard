@@ -41,24 +41,37 @@
                                     <rect key="frame" x="0.0" y="0.0" width="187" height="188"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JOb-c3-ydj">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JOb-c3-ydj">
                                             <rect key="frame" x="0.0" y="0.0" width="187" height="188"/>
                                             <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8yR-ag-QdJ">
+                                            <rect key="frame" x="0.0" y="113" width="187" height="75"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqA-8b-7z0">
                                             <rect key="frame" x="20" y="147" width="147" height="21"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="K7N-fz-lb9">
+                                            <rect key="frame" x="84" y="85" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="JOb-c3-ydj" firstAttribute="leading" secondItem="Jg0-6y-aiR" secondAttribute="leading" id="1RH-gI-Edo"/>
+                                    <constraint firstItem="8yR-ag-QdJ" firstAttribute="top" secondItem="K7N-fz-lb9" secondAttribute="bottom" constant="8" symbolic="YES" id="5FL-bA-gQz"/>
+                                    <constraint firstItem="8yR-ag-QdJ" firstAttribute="bottom" secondItem="JOb-c3-ydj" secondAttribute="bottom" id="DTH-zG-SXG"/>
                                     <constraint firstAttribute="trailing" secondItem="JOb-c3-ydj" secondAttribute="trailing" id="ECa-4I-lvT"/>
+                                    <constraint firstItem="8yR-ag-QdJ" firstAttribute="trailing" secondItem="JOb-c3-ydj" secondAttribute="trailing" id="Jeg-wT-GqV"/>
+                                    <constraint firstItem="8yR-ag-QdJ" firstAttribute="top" secondItem="Jg0-6y-aiR" secondAttribute="top" constant="113" id="KZc-ok-gUV"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="KqA-8b-7z0" secondAttribute="trailing" constant="12" id="Kcz-Wz-8go"/>
                                     <constraint firstAttribute="trailing" secondItem="JOb-c3-ydj" secondAttribute="trailing" id="LFW-61-woc"/>
+                                    <constraint firstItem="8yR-ag-QdJ" firstAttribute="leading" secondItem="JOb-c3-ydj" secondAttribute="leading" id="Nbh-wp-3gr"/>
                                     <constraint firstItem="JOb-c3-ydj" firstAttribute="top" secondItem="Jg0-6y-aiR" secondAttribute="top" id="O1W-CV-hae"/>
+                                    <constraint firstItem="8yR-ag-QdJ" firstAttribute="centerX" secondItem="K7N-fz-lb9" secondAttribute="centerX" id="Pqx-gW-8oV"/>
                                     <constraint firstAttribute="bottom" secondItem="JOb-c3-ydj" secondAttribute="bottom" id="TRg-pN-PRN"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="KqA-8b-7z0" secondAttribute="trailing" constant="12" id="WBy-mP-mQL"/>
                                     <constraint firstItem="JOb-c3-ydj" firstAttribute="top" secondItem="Jg0-6y-aiR" secondAttribute="top" id="emw-RG-dJm"/>
@@ -71,6 +84,7 @@
                                 <connections>
                                     <outlet property="imageMovie" destination="JOb-c3-ydj" id="9ht-f2-Jsj"/>
                                     <outlet property="titleMovie" destination="KqA-8b-7z0" id="ZKQ-1o-YOg"/>
+                                    <outlet property="waitLoadingImage" destination="K7N-fz-lb9" id="r8V-O9-HwR"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

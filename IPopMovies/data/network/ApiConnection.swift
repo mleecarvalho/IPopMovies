@@ -21,7 +21,7 @@ class ApiConnection{
         getResponseFromHttpUrl(url: self.buildRequestUrl(url: movieDBEndpoint, path: self.getRequestPath(type: type)), listener: listener)
     }
     
-    func getMovieImage(imageView: UIImageView, imagePath: String) {
+    func getMovieImage(imageView: UIImageView, imagePath: String, waitloadingView : UIActivityIndicatorView) {
         let imgURL  = URL(string: picassoEndpoint+imagePath)!
         let session = URLSession(configuration: .default)
         
@@ -29,7 +29,10 @@ class ApiConnection{
             if let e = error {
                 print("Error downloading movie picture: \(e)")
             } else { 
-                imageView.image = UIImage(data: data!)
+                DispatchQueue.main.async {
+                    imageView.image = UIImage(data: data!)
+                    waitloadingView.stopAnimating()
+                }
             }
 
         }.resume()

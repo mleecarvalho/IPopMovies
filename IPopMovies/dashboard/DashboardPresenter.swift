@@ -53,8 +53,12 @@ class DashboardPresenter: DashboardPresenterContract, ResponseListener {
         return MovieOrderBy.POPULARITY
     }
     
-    func getPicture(posterPath: String, movieImage: UIImageView) {
-        apiConnection.getMovieImage(imageView: movieImage, imagePath: posterPath)
+    func getPicture(posterPath: String, movieImage: UIImageView, waitloadingView : UIActivityIndicatorView) {
+        apiConnection.getMovieImage(
+            imageView: movieImage,
+            imagePath: posterPath,
+            waitloadingView : waitloadingView
+        )
     }
     
     func getListMovieCount() -> Int {
