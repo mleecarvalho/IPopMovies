@@ -31,6 +31,7 @@ class DashboardPresenter: DashboardPresenterContract, ResponseListener {
     }
     
     func reloadData(orderBy: MovieOrderBy) {
+        self.orderBy = orderBy
         apiConnection.requestMovies(type: orderBy, listener: self )
     }
     
@@ -42,15 +43,8 @@ class DashboardPresenter: DashboardPresenterContract, ResponseListener {
         return self.movies
     }
     
-    func getOrderBy(svdOb: Int) -> MovieOrderBy {
-        
-        for orderBy in SearchUtils.iterateEnum(MovieOrderBy.self) {
-            if orderBy.rawValue == svdOb {
-                return orderBy
-            }
-        }
-        
-        return MovieOrderBy.POPULARITY
+    func getOrderBy() -> MovieOrderBy {
+        return self.orderBy
     }
     
     func getPicture(posterPath: String, movieImage: UIImageView, waitloadingView : UIActivityIndicatorView) {
@@ -69,6 +63,9 @@ class DashboardPresenter: DashboardPresenterContract, ResponseListener {
         self.movies = movies
         view?.updateCollectionView()
     }
-    
+
+    func orderByWasChanged(orderBy: MovieOrderBy) -> Bool {
+        return self.orderBy != orderBy
+    }
 
 }

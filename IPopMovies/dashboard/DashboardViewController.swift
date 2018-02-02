@@ -10,7 +10,6 @@ import UIKit
 
 class DashboardViewController: UICollectionViewController, DashboardViewContract {
 
-    
     @IBOutlet weak var waitingLoadView: UIActivityIndicatorView!
     private var presenter: DashboardPresenterContract!
     
@@ -55,12 +54,33 @@ class DashboardViewController: UICollectionViewController, DashboardViewContract
         DispatchQueue.main.async {
             self.collectionView?.reloadData()
             self.waitingLoadView.stopAnimating()
-            
         }
     }
     
     func openItem(movie: Movie) {
         
+    }
+    
+    @IBAction func orderByAction(_ sender: Any) {
+        let orderByAction = UIAlertController.init(title: "Order By",
+                                                   message: "",
+                                                   preferredStyle: .actionSheet)
+        let popAction = UIAlertAction.init(title: "Popularity", style: .default,
+                                           handler: {(alert: UIAlertAction!) in self.reorderMovies(orderBy: MovieOrderBy.POPULARITY)})
+        let rateAction = UIAlertAction.init(title: "Rating", style: .default,
+                                            handler: {(alert: UIAlertAction!) in self.reorderMovies(orderBy: MovieOrderBy.RATING)})
+        orderByAction.addAction(popAction)
+        orderByAction.addAction(rateAction)
+        
+        present(orderByAction, animated: true, completion: nil)
+    }
+    
+    private func reorderMovies(orderBy: MovieOrderBy){
+        if(presenter.orderByWasChanged(orderBy: orderBy)){
+  //          self.collectionView?.deleteItems(at: (self.collectionView?.indexPathsForVisibleItems)!)
+            self.showLoading()
+            presenter.reloadData(orderBy: orderBy)
+        }
     }
     
 }

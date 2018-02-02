@@ -21,7 +21,8 @@ protocol DashboardPresenterContract {
         func getListMovie() -> [Movie]
         func getListMovieCount() -> Int
         func getMovie(index: Int) -> Movie
-        func getOrderBy(svdOb: Int) -> MovieOrderBy
+        func getOrderBy() -> MovieOrderBy
+        func orderByWasChanged(orderBy: MovieOrderBy) -> Bool
         func getPicture(posterPath: String, movieImage: UIImageView, waitloadingView : UIActivityIndicatorView)
 }
 

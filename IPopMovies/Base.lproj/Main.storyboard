@@ -22,7 +22,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xop-6u-JR5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tgQ-In-1de" customClass="CustomCollectionViewFlowLayout" customModule="IPopMovies" customModuleProvider="target">
                             <size key="itemSize" width="187" height="188"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -32,6 +32,7 @@
                         <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" id="cJM-jb-u3O">
                             <rect key="frame" x="0.0" y="-64" width="375" height="667"/>
                             <autoresizingMask key="autoresizingMask"/>
+                            <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </activityIndicatorView>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" semanticContentAttribute="forceLeftToRight" reuseIdentifier="movieCell" id="Jg0-6y-aiR" customClass="DashboardCollectionViewCell" customModule="IPopMovies" customModuleProvider="target">
@@ -93,7 +94,14 @@
                             <outlet property="delegate" destination="TaD-3W-h4o" id="Ugz-id-yQW"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="PopMovies" id="CQ1-rx-PbW"/>
+                    <navigationItem key="navigationItem" title="PopMovies" id="CQ1-rx-PbW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="PHQ-Wk-wOr">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="orderByAction:" destination="TaD-3W-h4o" id="dk8-SG-7rL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="waitingLoadView" destination="cJM-jb-u3O" id="ADb-lK-gge"/>
                     </connections>
